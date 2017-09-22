@@ -1,3 +1,4 @@
+import { TodoService } from './todo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +17,7 @@ import { TodosComponent } from './todos/todos.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
