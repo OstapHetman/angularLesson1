@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TodosComponent implements OnInit {
   todos;
   text;
+  appState = 'default';
   constructor(private _todoService: TodoService) { }
 
   ngOnInit() {
@@ -31,6 +32,11 @@ export class TodosComponent implements OnInit {
     }
 
     this._todoService.deleteTodo(todoText);
+  }
+
+  editTodo(todo) {
+    this.appState = 'edit';
+    this.text = todo.text;
   }
 
 }
